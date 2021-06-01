@@ -20,32 +20,32 @@ public class StockController {
 
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<StockDTO> save(@Valid RequestBody StockDTO dto){
+    public ResponseEntity<StockDTO> save(@Valid @RequestBody StockDTO dto) {
         return ResponseEntity.ok(service.save(dto));
     }
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<StockDTO> update(@Valid RequestBody StockDTO dto){
+    public ResponseEntity<StockDTO> update(@Valid @RequestBody StockDTO dto) {
         return ResponseEntity.ok(service.update(dto));
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<StockDTO>> findAll(){
+    public ResponseEntity<List<StockDTO>> findAll() {
         return ResponseEntity.ok(service.findAll());
     }
 
     @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<StockDTO> findById(@PathVariable Long id){
+    public ResponseEntity<StockDTO> findById(@PathVariable Long id) {
         return ResponseEntity.ok(service.findById(id));
     }
 
     @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<StockDTO> delete(@PathVariable Long id){
+    public ResponseEntity<StockDTO> delete(@PathVariable Long id) {
         return ResponseEntity.ok(service.delete(id));
     }
 
     @GetMapping(value = "/today", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<StockDTO>> findByToday(){
+    public ResponseEntity<List<StockDTO>> findByToday() {
         return ResponseEntity.ok(service.findByToday());
     }
 

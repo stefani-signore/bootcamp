@@ -16,7 +16,7 @@ public class BootcampApplication {
 	}
 
 	@Bean
-	public OpenAPI customOpenAPI(@Value("${spplication.description}") String description){
+	public OpenAPI customOpenAPI(@Value("${application.description}") String description){
 		return new OpenAPI().info(new Info()
 				.title(description)
 				.version("1.0")
